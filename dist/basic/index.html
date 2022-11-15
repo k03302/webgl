@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Process - 1</title>
+
+    <script id="vertex-shader" type="notjs">
+        precision mediump float;
+        attribute vec3 a_VertPosition;
+        attribute vec3 a_VertColor;
+
+        varying vec3 v_FragColor;
+
+        void main() {
+            v_FragColor = a_VertColor;
+            gl_Position = vec4(a_VertPosition, 1.0);
+        }
+    </script>
+
+
+    <script id="fragment-shader" type="notjs">
+        precision mediump float;
+
+        varying vec3 v_FragColor;
+
+        void main() {
+            gl_FragColor = vec4(v_FragColor, 1.0);
+        }
+    </script>
+
+
+
+
+</head>
+
+<body onload="demo();">
+
+    <canvas id="my-canvas" width="800" height="640">
+        This browser don't support canvas
+    </canvas>
+    <script src="app.js"></script>
+</body>
+
+</html>
